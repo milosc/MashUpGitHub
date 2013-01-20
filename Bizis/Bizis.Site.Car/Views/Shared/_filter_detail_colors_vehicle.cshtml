@@ -1,0 +1,33 @@
+﻿@model Bizis.Site.Car.Models.VmVehicleColors
+
+<div style="width:640px;">
+    
+    <div>
+        <div class="left color_box_header1" style="text-align:center;">
+            @Html.RadioButton(Model.IsAll.Name, true, Model.IsAll.Val) 
+        </div>
+        <div class="left color_box_header_list" style="text-align:center; width:500px">
+            @Html.RadioButton(Model.IsAll.Name, false, !Model.IsAll.Val) 
+            Selected vehicle types
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div>
+        <div class="left color_box" style="text-align:center;">
+            <small>@Model.AnyColor.Color.Name</small> 
+            <div class="color_pic @Model.AnyColor.Color.Key">
+            </div>
+        </div>
+        @foreach (var color in Model.Colors)
+        {
+            <div class="left color_box" style="text-align:center;">
+                <small>@color.Color.Name</small> 
+                <div class="color_pic @color.Color.Key">
+                </div>
+                @Html.CheckBox(Model.GetHtmlName(color.ColorId.Value), color.Selected)
+            </div>
+        }
+        <div class="clear"></div>
+    </div>
+</div>

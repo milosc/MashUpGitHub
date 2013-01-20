@@ -1,0 +1,75 @@
+﻿@model Bizis.Site.Car.Areas.auto.Models.VmAuto
+           
+
+
+
+<div>
+    @Html.Partial("_filter_detail_vehicleType", Model.VehicleType)
+    
+    @Html.Partial("_filter_detail_variant", Model.Variant0)
+
+    @Html.Partial("_filter_detail_variant", Model.Variant1)
+
+    @Html.Partial("_filter_detail_variant", Model.Variant2)
+
+
+    <div>
+        @Html.Partial("_filter_detail_price", Model.Price)
+        @Html.Partial("_filter_detail_year_reg1", Model.Year1Reg)
+        @Html.Partial("_filter_detail_km", Model.Km)
+        @Html.Partial("_filter_detail_kw", Model.Kw)
+    </div>
+
+    <div>
+        <div class="left">
+            <span class="filter_lable">Door Count</span>
+            <br />
+            @Html.DropDownList(Model.Doors.DoorsId.Name, Model.Doors.Doors)
+        </div>
+        <div class="left">
+            <span class="filter_lable">Number of Seats</span>
+            <br />
+            @Html.DropDownList(Model.SeatCounts.SeatCountId.Name, Model.SeatCounts.Seats)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div>
+        <div class="left">
+            <span class="filter_lable">Gearbox</span>
+            <br />
+            @Html.DropDownList(Model.Gearbox.GearboxId.Name, Model.Gearbox.Gearboxes)
+        </div>
+        <div class="left">
+            <span class="filter_lable">Fuel</span>
+            <br />
+            @Html.DropDownList(Model.Fuel.FuelId.Name, Model.Fuel.Fuel)
+        </div>
+        <div class="left">
+            <span class="filter_lable">Damaged Vehicles</span>
+            <br />
+            @Html.DropDownList(Model.Damage.IsDamaged.Name, Model.Damage.Damages)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div>
+        <div class="left">
+            <span class="filter_lable">Ad online since</span>
+            <br />
+            @Html.DropDownList(Model.AdPublished.DaysFromNow.Name, Model.AdPublished.When)
+        </div>
+        <div class="left">
+            <span class="filter_lable">Vendor</span>
+            <br />
+            @Html.DropDownList(Model.VendorType.VendorTypeId.Name, Model.VendorType.VendorTypes)
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    @Html.Partial("_filter_detail_extras", Model.Extras)
+
+    @Html.Partial("_filter_detail_colors_vehicle", Model.ExteriorColor)
+
+    @Html.Partial("_filter_detail_oldType", Model.OldTypes)
+</div>

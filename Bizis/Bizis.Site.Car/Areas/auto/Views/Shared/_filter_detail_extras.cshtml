@@ -1,0 +1,76 @@
+﻿@model Bizis.Site.Car.Areas.auto.Models.VmAutoFilterExtras
+
+<div>
+    <div class="left filter_check">
+        @Html.CheckBox(Model.HasABS.Name, Model.HasABS.Val) ABS
+    </div>
+    <div class="left filter_check">
+        @Html.CheckBox(Model.HasESP.Name, Model.HasESP.Val) ESP
+    </div>
+    <div class="left filter_check">
+        @Html.CheckBox(Model.HasAirbag.Name, Model.HasAirbag.Val) Airbag
+    </div>
+
+    <div class="left filter_check">
+        @Html.CheckBox(Model.HasKlima.Name, Model.HasKlima.Val) Climate Control
+    </div>
+    <div class="left filter_check">
+        @Html.CheckBox(Model.HasAutoKlima.Name, Model.HasAutoKlima.Val) Automatic Climate Control
+    </div>
+    <div class="left filter_check">
+        @Html.CheckBox(Model.HasSeatHeating.Name, Model.HasSeatHeating.Val) Electric heated seats
+    </div>
+
+
+    <div class="left filter_check">
+        @Html.CheckBox(Model.HasElWin.Name, Model.HasElWin.Val) Electric windows
+    </div>
+    <div class="left filter_check">
+        @Html.CheckBox(Model.HasCentrLock.Name, Model.HasCentrLock.Val) Central locking
+    </div>
+    <div class="left filter_check">
+        @Html.CheckBox(Model.HasSunRoof.Name, Model.HasSunRoof.Val) Sunroof
+    </div>
+
+    <div class="left filter_check">
+        @Html.CheckBox(Model.HasServo.Name, Model.HasServo.Val)  Power Assisted Steering 
+    </div>
+    <div class="left filter_check">
+        @Html.CheckBox(Model.HasTempomat.Name, Model.HasTempomat.Val) Cruise control
+    </div>
+    <div class="left filter_check">
+        @Html.CheckBox(Model.HasNavig.Name, Model.HasNavig.Val) Navigation system 
+    </div>
+
+
+    <div class="left filter_check">
+        @Html.CheckBox(Model.HasXenonL.Name, Model.HasXenonL.Val)  Xenon headlights
+    </div>
+    <div class="left filter_check">
+        @Html.CheckBox(Model.HasLeather.Name, Model.HasLeather.Val) Leather seats
+    </div>
+    <div class="left filter_check">
+        @Html.CheckBox(Model.HasAluFelt.Name, Model.HasAluFelt.Val) Alloy wheels 
+    </div>
+
+    <div class="left filter_check">
+        @Html.CheckBox(Model.Has4x4.Name, Model.Has4x4.Val)  Four wheel drive
+    </div>
+    <div class="left filter_check">
+        @Html.CheckBox(Model.HasTowbar.Name, Model.HasTowbar.Val) Trailer coupling
+    </div>
+    <div class="left filter_check">
+        @Html.CheckBox(Model.HasGarage.Name, Model.HasGarage.Val) Garage kept 
+    </div>
+
+    <div class="left filter_check">
+        @Html.CheckBox(Model.Is1Owner.Name, Model.Is1Owner.Val)  First owner
+    </div>
+    <div class="left filter_check">
+        @Html.CheckBox(Model.HasServisBook.Name, Model.HasServisBook.Val) Full service history
+    </div>
+    <div class="left filter_check">
+        @Html.CheckBox(Model.CanExchange.Name, Model.CanExchange.Val) Exchange possible 
+    </div>
+    <div class="clear"></div>
+</div>

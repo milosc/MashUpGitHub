@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8736E7CC-101A-45F8-846B-62FF0AE79E09}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bizis.Site.Car.Common</RootNamespace>
+    <AssemblyName>Bizis.Site.Car.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bizis.Common, Version=1.0.3.0, Culture=neutral, PublicKeyToken=3ec6fe129c1a1209, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Bizis.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Manager\AutoBL.cs" />
+    <Compile Include="Manager\AutoDL.cs" />
+    <Compile Include="Manager\MakerModelBL.cs" />
+    <Compile Include="Manager\MakerModelDL.cs" />
+    <Compile Include="Model\BmCarAd.cs" />
+    <Compile Include="Model\BmCarCondition.cs" />
+    <Compile Include="Model\BmColor.cs" />
+    <Compile Include="Model\BmJCarSecurity.cs" />
+    <Compile Include="Model\BmEngine.cs" />
+    <Compile Include="Model\BmJComfort.cs" />
+    <Compile Include="Model\BmJExtras.cs" />
+    <Compile Include="Model\BmJMultimedia.cs" />
+    <Compile Include="Model\BmJPrice.cs" />
+    <Compile Include="Model\BmJUnderCarriage.cs" />
+    <Compile Include="Model\BmVehicleType.cs" />
+    <Compile Include="Model\CarSite.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarSite.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BmCarModel.cs" />
+    <Compile Include="Model\RmAutoFilterExtras.cs" />
+    <Compile Include="Model\RmAutoFilterModel.cs" />
+    <Compile Include="Model\RmAutoFilterSearch.cs" />
+    <Compile Include="Model\RmAutoFilterVariant.cs" />
+    <Compile Include="Model\RmAutoSearchItem.cs" />
+    <Compile Include="Model\RmAutoSearchList.cs" />
+    <Compile Include="Model\Sif\SifLangStore.cs" />
+    <Compile Include="Model\Sif\Sif_AutoDoors.cs" />
+    <Compile Include="Model\Sif\Sif_AutoFuel.cs" />
+    <Compile Include="Model\Sif\Sif_AutoGearbox.cs" />
+    <Compile Include="Model\Sif\Sif_AutoMakerModels.cs" />
+    <Compile Include="Model\Sif\Sif_AutoMakers.cs" />
+    <Compile Include="Model\Sif\Sif_AutoModels.cs" />
+    <Compile Include="Model\Sif\Sif_AutoOldType.cs" />
+    <Compile Include="Model\Sif\Sif_AutoSeatCounts.cs" />
+    <Compile Include="Model\Sif\Sif_Base.cs" />
+    <Compile Include="Model\Sif\Sif_VehicleType.cs" />
+    <Compile Include="Model\Sif\Sif_Color.cs" />
+    <Compile Include="Model\Sif\Sif_Core.cs" />
+    <Compile Include="Model\Sif\Sif_VendorTypes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Model\CarSite.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CarSite.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Bizis.Site.Common\Bizis.Site.Common.csproj">
+      <Project>{488D4B2E-445E-4824-9759-FF41707AC156}</Project>
+      <Name>Bizis.Site.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

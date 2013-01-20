@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CarSiteModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CarSiteModelStoreContainer">
+          <EntitySet Name="car_CarAds" EntityType="CarSiteModel.Store.car_CarAds" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="car_Makers" EntityType="CarSiteModel.Store.car_Makers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="car_Models" EntityType="CarSiteModel.Store.car_Models" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="car_SubModels" EntityType="CarSiteModel.Store.car_SubModels" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="car_Variants" EntityType="CarSiteModel.Store.car_Variants" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="car_CarAds">
+          <Key>
+            <PropertyRef Name="CarAdId" />
+          </Key>
+          <Property Name="CarAdId" Type="bigint" Nullable="false" />
+          <Property Name="MakerId" Type="int" Nullable="false" />
+          <Property Name="ModelId" Type="int" Nullable="false" />
+          <Property Name="Variant" Type="nvarchar" MaxLength="16" />
+          <Property Name="VehicleTypeId" Type="tinyint" />
+          <Property Name="Price" Type="numeric" Scale="2" />
+          <Property Name="Year" Type="smallint" />
+          <Property Name="Year1Reg" Type="smallint" Nullable="false" />
+          <Property Name="Month1Reg" Type="date" />
+          <Property Name="MonthTechReview" Type="date" />
+          <Property Name="Km" Type="int" Nullable="false" />
+          <Property Name="Kw" Type="int" Nullable="false" />
+          <Property Name="Ccm" Type="int" />
+          <Property Name="DoorsId" Type="smallint" Nullable="false" />
+          <Property Name="RoofId" Type="tinyint" />
+          <Property Name="SeatCountId" Type="smallint" Nullable="false" />
+          <Property Name="SeatMaterialId" Type="tinyint" />
+          <Property Name="SeatColorId" Type="tinyint" />
+          <Property Name="GearboxId" Type="tinyint" Nullable="false" />
+          <Property Name="FuelId" Type="tinyint" Nullable="false" />
+          <Property Name="VendorTypeId" Type="tinyint" Nullable="false" />
+          <Property Name="IsDamaged" Type="bit" />
+          <Property Name="RegionId" Type="int" />
+          <Property Name="HasWarranty" Type="bit" />
+          <Property Name="HasABS" Type="bit" />
+          <Property Name="HasESP" Type="bit" />
+          <Property Name="HasAirbag" Type="bit" />
+          <Property Name="HasKlima" Type="bit" />
+          <Property Name="HasAutoKlima" Type="bit" />
+          <Property Name="HasSeatHeating" Type="bit" />
+          <Property Name="HasElWin" Type="bit" />
+          <Property Name="HasCentrLock" Type="bit" />
+          <Property Name="HasSunRoof" Type="bit" />
+          <Property Name="HasServo" Type="bit" />
+          <Property Name="HasTempomat" Type="bit" />
+          <Property Name="HasNavig" Type="bit" />
+          <Property Name="HasXenonL" Type="bit" />
+          <Property Name="HasLeather" Type="bit" />
+          <Property Name="HasAluFelt" Type="bit" />
+          <Property Name="Has4x4" Type="bit" />
+          <Property Name="HasTowbar" Type="bit" />
+          <Property Name="HasGarage" Type="bit" />
+          <Property Name="Is1Owner" Type="bit" />
+          <Property Name="Is2Owner" Type="bit" />
+          <Property Name="HasServisBook" Type="bit" />
+          <Property Name="CanExchange" Type="bit" />
+          <Property Name="OldTypeId" Type="tinyint" />
+          <Property Name="PreservedId" Type="tinyint" />
+          <Property Name="ColorId" Type="tinyint" />
+          <Property Name="IsColorMetalic" Type="bit" />
+          <Property Name="EmissionClassId" Type="tinyint" />
+          <Property Name="VIN" Type="varchar" MaxLength="32" />
+          <Property Name="JUnderCarriage" Type="ntext" />
+          <Property Name="JInterior" Type="ntext" />
+          <Property Name="JSecurity" Type="ntext" />
+          <Property Name="JComfort" Type="ntext" />
+          <Property Name="JMultimedia" Type="ntext" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="JShortFeatures" Type="ntext" />
+          <Property Name="JPrice" Type="ntext" />
+          <Property Name="JExtras" Type="ntext" />
+          <Property Name="Published" Type="datetime" Nullable="false" />
+          <Property Name="VendorId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="car_Makers">
+          <Key>
+            <PropertyRef Name="MakerId" />
+          </Key>
+          <Property Name="MakerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RefId" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="HasCar" Type="bit" Nullable="false" />
+          <Property Name="HasDeliv" Type="bit" Nullable="false" />
+          <Property Name="HasTruck" Type="bit" Nullable="false" />
+          <Property Name="Updated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="car_Models">
+          <Key>
+            <PropertyRef Name="ModelId" />
+          </Key>
+          <Property Name="ModelId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MakerId" Type="int" Nullable="false" />
+          <Property Name="RefId" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="IsCar" Type="bit" Nullable="false" />
+          <Property Name="IsDeliv" Type="bit" Nullable="false" />
+          <Property Name="IsTruck" Type="bit" Nullable="false" />
+          <Property Name="Updated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="car_SubModels">
+          <Key>
+            <PropertyRef Name="SubModelId" />
+          </Key>
+          <Property Name="SubModelId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ModelId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="Updated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="car_Variants">
+          <Key>
+            <PropertyRef Name="VariantId" />
+          </Key>
+          <Property Name="VariantId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ModelId" Type="int" Nullable="false" />
+          <Property Name="SubModelId" Type="int" Nullable="false" />
+          <Property Name="RefId" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="VehicleType" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="YearFrom" Type="int" Nullable="false" />
+          <Property Name="YearTo" Type="int" />
+          <Property Name="Doors" Type="int" Nullable="false" />
+          <Property Name="Hp" Type="int" Nullable="false" />
+          <Property Name="MaxSpeed_kmh" Type="smallint" />
+          <Property Name="AccelTo100_s" Type="decimal" Precision="5" Scale="1" />
+          <Property Name="FuelTank_l" Type="smallint" />
+          <Property Name="Seats" Type="smallint" Nullable="false" />
+          <Property Name="Length_mm" Type="int" />
+          <Property Name="Width_mm" Type="int" />
+          <Property Name="Wheelbase_mm" Type="int" />
+          <Property Name="FrontTrack_mm" Type="int" />
+          <Property Name="BackTrack_mm" Type="int" />
+          <Property Name="MinTrunk_l" Type="int" />
+          <Property Name="MaxTrunk_l" Type="int" />
+          <Property Name="Engine_ccm" Type="int" Nullable="false" />
+          <Property Name="Engine_pos" Type="nvarchar" MaxLength="64" />
+          <Property Name="MaxPowerIn_rpm" Type="int" />
+          <Property Name="Torque" Type="nvarchar" MaxLength="64" />
+          <Property Name="FuelSystem" Type="nvarchar" MaxLength="64" />
+          <Property Name="GasDistribution" Type="nvarchar" MaxLength="64" />
+          <Property Name="Cylinders_pos" Type="nvarchar" MaxLength="64" />
+          <Property Name="Cylinders" Type="tinyint" />
+          <Property Name="CylindersDiam_mm" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="CylindersStroke_mm" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="CompresionRatio" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="CylindersValve" Type="tinyint" />
+          <Property Name="FuelType" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="GearsAutomatic" Type="tinyint" />
+          <Property Name="GearsManual" Type="tinyint" />
+          <Property Name="FrontSuspension" Type="nvarchar" MaxLength="64" />
+          <Property Name="BackSuspension" Type="nvarchar" MaxLength="64" />
+          <Property Name="FrontBrakes" Type="nvarchar" MaxLength="64" />
+          <Property Name="RearBrakes" Type="nvarchar" MaxLength="64" />
+          <Property Name="ABS" Type="bit" />
+          <Property Name="SteeringType" Type="nvarchar" MaxLength="32" />
+          <Property Name="PowerSteering" Type="nvarchar" MaxLength="32" />
+          <Property Name="FuelConsumUrban" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="FuelConsumExt" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Weight_kg" Type="int" />
+          <Property Name="MaxWeight_kg" Type="int" />
+          <Property Name="TireSize" Type="nvarchar" MaxLength="64" />
+          <Property Name="Updated" Type="datetime" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CarSiteModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="CarSiteEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="car_CarAds" EntityType="CarSiteModel.car_CarAds" />
+          <EntitySet Name="car_Makers" EntityType="CarSiteModel.car_Makers" />
+          <EntitySet Name="car_SubModels" EntityType="CarSiteModel.car_SubModels" />
+          <EntitySet Name="car_Variants" EntityType="CarSiteModel.car_Variants" />
+          <EntitySet Name="car_Models" EntityType="CarSiteModel.car_Models" />
+        </EntityContainer>
+        <EntityType Name="car_CarAds">
+          <Key>
+            <PropertyRef Name="CarAdId" />
+          </Key>
+          <Property Type="Int64" Name="CarAdId" Nullable="false" />
+          <Property Type="Int32" Name="MakerId" Nullable="false" />
+          <Property Type="Int32" Name="ModelId" Nullable="false" />
+          <Property Type="String" Name="Variant" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="VehicleTypeId" />
+          <Property Type="Decimal" Name="Price" Precision="18" Scale="2" />
+          <Property Type="Int16" Name="Year" />
+          <Property Type="Int16" Name="Year1Reg" Nullable="false" />
+          <Property Type="DateTime" Name="Month1Reg" />
+          <Property Type="DateTime" Name="MonthTechReview" />
+          <Property Type="Int32" Name="Km" Nullable="false" />
+          <Property Type="Int32" Name="Kw" Nullable="false" />
+          <Property Type="Int32" Name="Ccm" />
+          <Property Type="Int16" Name="DoorsId" Nullable="false" />
+          <Property Type="Byte" Name="RoofId" />
+          <Property Type="Int16" Name="SeatCountId" Nullable="false" />
+          <Property Type="Byte" Name="SeatMaterialId" />
+          <Property Type="Byte" Name="SeatColorId" />
+          <Property Type="Byte" Name="GearboxId" Nullable="false" />
+          <Property Type="Byte" Name="FuelId" Nullable="false" />
+          <Property Type="Byte" Name="VendorTypeId" Nullable="false" />
+          <Property Type="Boolean" Name="IsDamaged" />
+          <Property Type="Int32" Name="RegionId" />
+          <Property Type="Boolean" Name="HasWarranty" />
+          <Property Type="Boolean" Name="HasABS" />
+          <Property Type="Boolean" Name="HasESP" />
+          <Property Type="Boolean" Name="HasAirbag" />
+          <Property Type="Boolean" Name="HasKlima" />
+          <Property Type="Boolean" Name="HasAutoKlima" />
+          <Property Type="Boolean" Name="HasSeatHeating" />
+          <Property Type="Boolean" Name="HasElWin" />
+          <Property Type="Boolean" Name="HasCentrLock" />
+          <Property Type="Boolean" Name="HasSunRoof" />
+          <Property Type="Boolean" Name="HasServo" />
+          <Property Type="Boolean" Name="HasTempomat" />
+          <Property Type="Boolean" Name="HasNavig" />
+          <Property Type="Boolean" Name="HasXenonL" />
+          <Property Type="Boolean" Name="HasLeather" />
+          <Property Type="Boolean" Name="HasAluFelt" />
+          <Property Type="Boolean" Name="Has4x4" />
+          <Property Type="Boolean" Name="HasTowbar" />
+          <Property Type="Boolean" Name="HasGarage" />
+          <Property Type="Boolean" Name="Is1Owner" />
+          <Property Type="Boolean" Name="Is2Owner" />
+          <Property Type="Boolean" Name="HasServisBook" />
+          <Property Type="Boolean" Name="CanExchange" />
+          <Property Type="Byte" Name="OldTypeId" />
+          <Property Type="Byte" Name="PreservedId" />
+          <Property Type="Byte" Name="ColorId" />
+          <Property Type="Boolean" Name="IsColorMetalic" />
+          <Property Type="Byte" Name="EmissionClassId" />
+          <Property Type="String" Name="VIN" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="JUnderCarriage" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JInterior" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JSecurity" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JComfort" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JMultimedia" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JShortFeatures" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JPrice" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JExtras" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Published" Nullable="false" />
+          <Property Type="Int64" Name="VendorId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="car_Makers">
+          <Key>
+            <PropertyRef Name="MakerId" />
+          </Key>
+          <Property Type="Int32" Name="MakerId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RefId" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="HasCar" Nullable="false" />
+          <Property Type="Boolean" Name="HasDeliv" Nullable="false" />
+          <Property Type="Boolean" Name="HasTruck" Nullable="false" />
+          <Property Type="DateTime" Name="Updated" Nullable="false" />
+        </EntityType>
+        <EntityType Name="car_SubModels">
+          <Key>
+            <PropertyRef Name="SubModelId" />
+          </Key>
+          <Property Type="Int32" Name="SubModelId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ModelId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Updated" Nullable="false" />
+        </EntityType>
+        <EntityType Name="car_Variants">
+          <Key>
+            <PropertyRef Name="VariantId" />
+          </Key>
+          <Property Type="Int32" Name="VariantId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ModelId" Nullable="false" />
+          <Property Type="Int32" Name="SubModelId" Nullable="false" />
+          <Property Type="String" Name="RefId" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VehicleType" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="YearFrom" Nullable="false" />
+          <Property Type="Int32" Name="YearTo" />
+          <Property Type="Int32" Name="Doors" Nullable="false" />
+          <Property Type="Int32" Name="Hp" Nullable="false" />
+          <Property Type="Int16" Name="MaxSpeed_kmh" />
+          <Property Type="Decimal" Name="AccelTo100_s" Precision="5" Scale="1" />
+          <Property Type="Int16" Name="FuelTank_l" />
+          <Property Type="Int16" Name="Seats" Nullable="false" />
+          <Property Type="Int32" Name="Length_mm" />
+          <Property Type="Int32" Name="Width_mm" />
+          <Property Type="Int32" Name="Wheelbase_mm" />
+          <Property Type="Int32" Name="FrontTrack_mm" />
+          <Property Type="Int32" Name="BackTrack_mm" />
+          <Property Type="Int32" Name="MinTrunk_l" />
+          <Property Type="Int32" Name="MaxTrunk_l" />
+          <Property Type="Int32" Name="Engine_ccm" Nullable="false" />
+          <Property Type="String" Name="Engine_pos" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MaxPowerIn_rpm" />
+          <Property Type="String" Name="Torque" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FuelSystem" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GasDistribution" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Cylinders_pos" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="Cylinders" />
+          <Property Type="Decimal" Name="CylindersDiam_mm" Precision="7" Scale="2" />
+          <Property Type="Decimal" Name="CylindersStroke_mm" Precision="7" Scale="2" />
+          <Property Type="Decimal" Name="CompresionRatio" Precision="7" Scale="2" />
+          <Property Type="Byte" Name="CylindersValve" />
+          <Property Type="String" Name="FuelType" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="GearsAutomatic" />
+          <Property Type="Byte" Name="GearsManual" />
+          <Property Type="String" Name="FrontSuspension" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BackSuspension" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FrontBrakes" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RearBrakes" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="ABS" />
+          <Property Type="String" Name="SteeringType" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PowerSteering" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="FuelConsumUrban" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="FuelConsumExt" Precision="10" Scale="2" />
+          <Property Type="Int32" Name="Weight_kg" />
+          <Property Type="Int32" Name="MaxWeight_kg" />
+          <Property Type="String" Name="TireSize" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Updated" Nullable="false" />
+        </EntityType>
+        <EntityType Name="car_Models">
+          <Key>
+            <PropertyRef Name="ModelId" />
+          </Key>
+          <Property Type="Int32" Name="ModelId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="MakerId" Nullable="false" />
+          <Property Type="String" Name="RefId" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsCar" Nullable="false" />
+          <Property Type="Boolean" Name="IsDeliv" Nullable="false" />
+          <Property Type="Boolean" Name="IsTruck" Nullable="false" />
+          <Property Type="DateTime" Name="Updated" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CarSiteModelStoreContainer" CdmEntityContainer="CarSiteEntities">
+          <EntitySetMapping Name="car_CarAds">
+            <EntityTypeMapping TypeName="CarSiteModel.car_CarAds">
+              <MappingFragment StoreEntitySet="car_CarAds">
+                <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+                <ScalarProperty Name="Published" ColumnName="Published" />
+                <ScalarProperty Name="JExtras" ColumnName="JExtras" />
+                <ScalarProperty Name="JPrice" ColumnName="JPrice" />
+                <ScalarProperty Name="JShortFeatures" ColumnName="JShortFeatures" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="JMultimedia" ColumnName="JMultimedia" />
+                <ScalarProperty Name="JComfort" ColumnName="JComfort" />
+                <ScalarProperty Name="JSecurity" ColumnName="JSecurity" />
+                <ScalarProperty Name="JInterior" ColumnName="JInterior" />
+                <ScalarProperty Name="JUnderCarriage" ColumnName="JUnderCarriage" />
+                <ScalarProperty Name="VIN" ColumnName="VIN" />
+                <ScalarProperty Name="EmissionClassId" ColumnName="EmissionClassId" />
+                <ScalarProperty Name="IsColorMetalic" ColumnName="IsColorMetalic" />
+                <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+                <ScalarProperty Name="PreservedId" ColumnName="PreservedId" />
+                <ScalarProperty Name="OldTypeId" ColumnName="OldTypeId" />
+                <ScalarProperty Name="CanExchange" ColumnName="CanExchange" />
+                <ScalarProperty Name="HasServisBook" ColumnName="HasServisBook" />
+                <ScalarProperty Name="Is2Owner" ColumnName="Is2Owner" />
+                <ScalarProperty Name="Is1Owner" ColumnName="Is1Owner" />
+                <ScalarProperty Name="HasGarage" ColumnName="HasGarage" />
+                <ScalarProperty Name="HasTowbar" ColumnName="HasTowbar" />
+                <ScalarProperty Name="Has4x4" ColumnName="Has4x4" />
+                <ScalarProperty Name="HasAluFelt" ColumnName="HasAluFelt" />
+                <ScalarProperty Name="HasLeather" ColumnName="HasLeather" />
+                <ScalarProperty Name="HasXenonL" ColumnName="HasXenonL" />
+                <ScalarProperty Name="HasNavig" ColumnName="HasNavig" />
+                <ScalarProperty Name="HasTempomat" ColumnName="HasTempomat" />
+                <ScalarProperty Name="HasServo" ColumnName="HasServo" />
+                <ScalarProperty Name="HasSunRoof" ColumnName="HasSunRoof" />
+                <ScalarProperty Name="HasCentrLock" ColumnName="HasCentrLock" />
+                <ScalarProperty Name="HasElWin" ColumnName="HasElWin" />
+                <ScalarProperty Name="HasSeatHeating" ColumnName="HasSeatHeating" />
+                <ScalarProperty Name="HasAutoKlima" ColumnName="HasAutoKlima" />
+                <ScalarProperty Name="HasKlima" ColumnName="HasKlima" />
+                <ScalarProperty Name="HasAirbag" ColumnName="HasAirbag" />
+                <ScalarProperty Name="HasESP" ColumnName="HasESP" />
+                <ScalarProperty Name="HasABS" ColumnName="HasABS" />
+                <ScalarProperty Name="HasWarranty" ColumnName="HasWarranty" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="IsDamaged" ColumnName="IsDamaged" />
+                <ScalarProperty Name="VendorTypeId" ColumnName="VendorTypeId" />
+                <ScalarProperty Name="FuelId" ColumnName="FuelId" />
+                <ScalarProperty Name="GearboxId" ColumnName="GearboxId" />
+                <ScalarProperty Name="SeatColorId" ColumnName="SeatColorId" />
+                <ScalarProperty Name="SeatMaterialId" ColumnName="SeatMaterialId" />
+                <ScalarProperty Name="SeatCountId" ColumnName="SeatCountId" />
+                <ScalarProperty Name="RoofId" ColumnName="RoofId" />
+                <ScalarProperty Name="DoorsId" ColumnName="DoorsId" />
+                <ScalarProperty Name="Ccm" ColumnName="Ccm" />
+                <ScalarProperty Name="Kw" ColumnName="Kw" />
+                <ScalarProperty Name="Km" ColumnName="Km" />
+                <ScalarProperty Name="MonthTechReview" ColumnName="MonthTechReview" />
+                <ScalarProperty Name="Month1Reg" ColumnName="Month1Reg" />
+                <ScalarProperty Name="Year1Reg" ColumnName="Year1Reg" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+                <ScalarProperty Name="Variant" ColumnName="Variant" />
+                <ScalarProperty Name="ModelId" ColumnName="ModelId" />
+                <ScalarProperty Name="MakerId" ColumnName="MakerId" />
+                <ScalarProperty Name="CarAdId" ColumnName="CarAdId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="car_Makers">
+            <EntityTypeMapping TypeName="CarSiteModel.car_Makers">
+              <MappingFragment StoreEntitySet="car_Makers">
+                <ScalarProperty Name="Updated" ColumnName="Updated" />
+                <ScalarProperty Name="HasTruck" ColumnName="HasTruck" />
+                <ScalarProperty Name="HasDeliv" ColumnName="HasDeliv" />
+                <ScalarProperty Name="HasCar" ColumnName="HasCar" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="RefId" ColumnName="RefId" />
+                <ScalarProperty Name="MakerId" ColumnName="MakerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="car_SubModels">
+            <EntityTypeMapping TypeName="CarSiteModel.car_SubModels">
+              <MappingFragment StoreEntitySet="car_SubModels">
+                <ScalarProperty Name="Updated" ColumnName="Updated" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ModelId" ColumnName="ModelId" />
+                <ScalarProperty Name="SubModelId" ColumnName="SubModelId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="car_Variants">
+            <EntityTypeMapping TypeName="CarSiteModel.car_Variants">
+              <MappingFragment StoreEntitySet="car_Variants">
+                <ScalarProperty Name="Updated" ColumnName="Updated" />
+                <ScalarProperty Name="TireSize" ColumnName="TireSize" />
+                <ScalarProperty Name="MaxWeight_kg" ColumnName="MaxWeight_kg" />
+                <ScalarProperty Name="Weight_kg" ColumnName="Weight_kg" />
+                <ScalarProperty Name="FuelConsumExt" ColumnName="FuelConsumExt" />
+                <ScalarProperty Name="FuelConsumUrban" ColumnName="FuelConsumUrban" />
+                <ScalarProperty Name="PowerSteering" ColumnName="PowerSteering" />
+                <ScalarProperty Name="SteeringType" ColumnName="SteeringType" />
+                <ScalarProperty Name="ABS" ColumnName="ABS" />
+                <ScalarProperty Name="RearBrakes" ColumnName="RearBrakes" />
+                <ScalarProperty Name="FrontBrakes" ColumnName="FrontBrakes" />
+                <ScalarProperty Name="BackSuspension" ColumnName="BackSuspension" />
+                <ScalarProperty Name="FrontSuspension" ColumnName="FrontSuspension" />
+                <ScalarProperty Name="GearsManual" ColumnName="GearsManual" />
+                <ScalarProperty Name="GearsAutomatic" ColumnName="GearsAutomatic" />
+                <ScalarProperty Name="FuelType" ColumnName="FuelType" />
+                <ScalarProperty Name="CylindersValve" ColumnName="CylindersValve" />
+                <ScalarProperty Name="CompresionRatio" ColumnName="CompresionRatio" />
+                <ScalarProperty Name="CylindersStroke_mm" ColumnName="CylindersStroke_mm" />
+                <ScalarProperty Name="CylindersDiam_mm" ColumnName="CylindersDiam_mm" />
+                <ScalarProperty Name="Cylinders" ColumnName="Cylinders" />
+                <ScalarProperty Name="Cylinders_pos" ColumnName="Cylinders_pos" />
+                <ScalarProperty Name="GasDistribution" ColumnName="GasDistribution" />
+                <ScalarProperty Name="FuelSystem" ColumnName="FuelSystem" />
+                <ScalarProperty Name="Torque" ColumnName="Torque" />
+                <ScalarProperty Name="MaxPowerIn_rpm" ColumnName="MaxPowerIn_rpm" />
+                <ScalarProperty Name="Engine_pos" ColumnName="Engine_pos" />
+                <ScalarProperty Name="Engine_ccm" ColumnName="Engine_ccm" />
+                <ScalarProperty Name="MaxTrunk_l" ColumnName="MaxTrunk_l" />
+                <ScalarProperty Name="MinTrunk_l" ColumnName="MinTrunk_l" />
+                <ScalarProperty Name="BackTrack_mm" ColumnName="BackTrack_mm" />
+                <ScalarProperty Name="FrontTrack_mm" ColumnName="FrontTrack_mm" />
+                <ScalarProperty Name="Wheelbase_mm" ColumnName="Wheelbase_mm" />
+                <ScalarProperty Name="Width_mm" ColumnName="Width_mm" />
+                <ScalarProperty Name="Length_mm" ColumnName="Length_mm" />
+                <ScalarProperty Name="Seats" ColumnName="Seats" />
+                <ScalarProperty Name="FuelTank_l" ColumnName="FuelTank_l" />
+                <ScalarProperty Name="AccelTo100_s" ColumnName="AccelTo100_s" />
+                <ScalarProperty Name="MaxSpeed_kmh" ColumnName="MaxSpeed_kmh" />
+                <ScalarProperty Name="Hp" ColumnName="Hp" />
+                <ScalarProperty Name="Doors" ColumnName="Doors" />
+                <ScalarProperty Name="YearTo" ColumnName="YearTo" />
+                <ScalarProperty Name="YearFrom" ColumnName="YearFrom" />
+                <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="RefId" ColumnName="RefId" />
+                <ScalarProperty Name="SubModelId" ColumnName="SubModelId" />
+                <ScalarProperty Name="ModelId" ColumnName="ModelId" />
+                <ScalarProperty Name="VariantId" ColumnName="VariantId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="car_Models">
+            <EntityTypeMapping TypeName="CarSiteModel.car_Models">
+              <MappingFragment StoreEntitySet="car_Models">
+                <ScalarProperty Name="Updated" ColumnName="Updated" />
+                <ScalarProperty Name="IsTruck" ColumnName="IsTruck" />
+                <ScalarProperty Name="IsDeliv" ColumnName="IsDeliv" />
+                <ScalarProperty Name="IsCar" ColumnName="IsCar" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="RefId" ColumnName="RefId" />
+                <ScalarProperty Name="MakerId" ColumnName="MakerId" />
+                <ScalarProperty Name="ModelId" ColumnName="ModelId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="CarSite" ZoomLevel="61">
+        <EntityTypeShape EntityType="CarSiteModel.car_CarAds" Width="1.5" PointX="0.75" PointY="0.75" Height="11.288798828125003" />
+        <EntityTypeShape EntityType="CarSiteModel.car_Makers" Width="1.5" PointX="3.125" PointY="1.25" Height="2.085348307291667" />
+        <EntityTypeShape EntityType="CarSiteModel.car_SubModels" Width="1.5" PointX="5.375" PointY="0.75" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="CarSiteModel.car_Variants" Width="1.5" PointX="5.375" PointY="3.75" Height="8.9879361979166674" />
+        <EntityTypeShape EntityType="CarSiteModel.car_Models" Width="1.5" PointX="3.125" PointY="3.875" Height="2.2496956380208326" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

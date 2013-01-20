@@ -1,0 +1,28 @@
+﻿@model Bizis.Site.Car.Areas.auto.Models.VmAutoVehicleType
+
+<div style="width:640px;">
+    @foreach (var vehicle in Model.Types)
+    {
+        <div style="float:left; text-align:center;">
+            <div class="car_type_pic @vehicle.VehicleType.Key">
+            </div>
+            <small>@vehicle.VehicleType.Name</small> 
+            <br />
+            @Html.CheckBox(Model.GetHtmlName(vehicle.VehicleType.Id), vehicle.Selected)
+        </div>
+    }
+    <div class="clear"></div>
+    <div>
+        <div style="float:left; text-align:center; width:50%;">
+            @Html.RadioButton(Model.IsAll.Name, true, Model.IsAll.Val) 
+            All vehicle types
+        </div>
+        <div style="float:left; text-align:center; width:50%;">
+            @Html.RadioButton(Model.IsAll.Name, false, !Model.IsAll.Val) 
+            Selected vehicle types
+        </div>
+        <div class="clear"></div>
+    </div>
+          
+       
+</div>

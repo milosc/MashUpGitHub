@@ -1,0 +1,8 @@
+﻿@model Bizis.Site.Car.Models.VmVehicleOldTypes
+
+<ul>
+    @foreach (var ot in Model.OldTypes)
+    {
+        <li>@Html.CheckBox(Model.GetHtmlName(ot.Id), ot.IsSelected) @ot.Name</li>   
+    }  
+</ul>

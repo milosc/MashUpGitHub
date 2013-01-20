@@ -1,0 +1,131 @@
+body
+{
+    font-size: .85em;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+
+header,
+footer,
+nav,
+section {
+    display: block;
+}
+ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+ul li {
+	margin: 0px;
+	padding: 0px;
+}
+/* Styles for basic forms
+-----------------------------------------------------------*/
+
+fieldset 
+{
+    border:1px solid #ddd;
+    padding:0 1.4em 1.4em 1.4em;
+    margin:0 0 1.5em 0;
+}
+
+legend 
+{
+    font-size:1.2em;
+    font-weight: bold;
+}
+
+textarea 
+{
+    min-height: 75px;
+}
+
+.editor-label 
+{
+    margin: 1em 0 0 0;
+}
+
+.editor-field 
+{
+    margin:0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/* Common
+-----------------------------------------------------------*/
+.clear {clear: both;font-size: 1px;}
+.left { float:left;}
+.filter_lable{font-size:11px; font-weight:bolder;}
+.filter_check{font-size:10px; width:150px; height:30px; vertical-align:middle; }
+
+.color_box { width:37px; height:50px; }
+.color_box_header1{width:37px; height:20px; }
+.color_box_header_list{ height:20px; }
+/* Auto
+-----------------------------------------------------------*/
+
+.color_pic{
+    height:19px;
+    width:35px;
+    background-repeat: no-repeat;
+    background-position:top left;
+}
+.any{background-image: url(img/color/any.png);}
+.beige{background-image: url(img/color/beige.png);}
+.black{background-image: url(img/color/black.png);}
+.blue{background-image: url(img/color/blue.png);}
+.brown{background-image: url(img/color/brown.png);}
+.gold{background-image: url(img/color/gold.png);}
+.green{background-image: url(img/color/green.png);}
+.grey{background-image: url(img/color/grey.png);}
+.orange{background-image: url(img/color/orange.png);}
+.purple{background-image: url(img/color/purple.png);}
+.red{background-image: url(img/color/red.png);}
+.silver{background-image: url(img/color/silver.png);}
+.white{background-image: url(img/color/white.png);}
+.yellow{background-image: url(img/color/yellow.png);}
+
+.car_type_pic{
+    height:25px;
+    width:75px;
+    background-repeat: no-repeat; 
+    background-image: url(img/auto/types.gif);
+}
+.limo {background-position: 100% -5px;}
+.small_car {background-position: 100% -35px;}
+.estate {background-position: 100% -65px;}
+.van {background-position: 100% -95px;}
+.off_road {background-position: 100% -125px;}
+.cabrio {background-position: 100% -155px;}
+.coupe {background-position: 100% -185px;}

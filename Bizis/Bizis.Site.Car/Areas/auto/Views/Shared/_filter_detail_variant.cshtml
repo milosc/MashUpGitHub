@@ -1,0 +1,21 @@
+﻿@model Bizis.Site.Car.Areas.auto.Models.VmAutoVariant
+
+
+<div>
+    <div class="left">
+        <span class="filter_lable">Maker</span>
+        <br />
+        @Html.DropDownList(Model.MakerId.Name, Model.Makers)
+    </div>
+    <div class="left">
+        <span class="filter_lable">Model</span>
+        <br />
+       
+        @Html.DropDownList(Model.ModelId.Name, Model.Models)
+    </div>
+    <div>
+        <span class="filter_lable">Variant</span>
+        <br />
+        @Html.TextBox(Model.Variant.Name, Model.Variant.Val)
+    </div>
+</div>

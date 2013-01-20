@@ -1,0 +1,15 @@
+﻿@model Bizis.Site.Car.Models.VmVehicleYear
+
+<div>
+    <div class="left">
+        <span class="filter_lable">First Registration</span> from
+        <br />
+        @Html.DropDownList(Model.From.Name, Model.Froms)
+    </div>
+    <div class="left">
+        <span class="filter_lable">First Registration</span> to
+        <br />
+        @Html.DropDownList(Model.To.Name, Model.Tos)
+    </div>
+    <div class="clear"></div>
+</div>

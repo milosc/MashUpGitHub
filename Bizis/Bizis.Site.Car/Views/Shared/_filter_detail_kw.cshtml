@@ -1,0 +1,15 @@
+﻿@model Bizis.Site.Car.Models.VmVehicleKw
+
+<div>
+    <div class="left">
+        <span class="filter_lable">Power</span> from
+        <br />
+        @Html.DropDownList(Model.From.Name, Model.Froms)
+    </div>
+    <div class="left">
+        <span class="filter_lable">Power</span> to
+        <br />
+        @Html.DropDownList(Model.To.Name, Model.Tos)
+    </div>
+    <div class="clear"></div>
+</div>

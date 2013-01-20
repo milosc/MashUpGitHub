@@ -1,0 +1,19 @@
+﻿@model Bizis.Site.Car.Models.VmVehiclePrice
+
+<div>
+    <div class="left">
+        <span class="filter_lable">Price</span> from
+        <br />
+        @Html.DropDownList(Model.From.Name, Model.Froms)
+    </div>
+    <div class="left">
+        <span class="filter_lable">Price</span> to
+        <br />
+       
+        @Html.DropDownList(Model.To.Name, Model.Tos)
+    </div>
+    <div class="left">
+        @Html.CheckBox(Model.ShowWithNoPrice.Name, Model.ShowWithNoPrice.Val) <span>Show ads without price</span>
+    </div>
+    <div class="clear"></div>
+</div>
